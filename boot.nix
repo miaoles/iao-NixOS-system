@@ -14,6 +14,7 @@
 
 			enable = true;
 			efiSupport = true;
+			device = "nodev";
 
 		};
 
