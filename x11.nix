@@ -2,19 +2,32 @@
 
 {
 
-	# Enable the X11 windowing system.
-	services.xserver.enable = true;
+	services.xserver = {
 
-	# Disable display managers, use startx.
-	services.xserver.displayManager.startx.enable = true;
+		# Enable the X11 windowing system.
+		enable = true;
 
-	# Enable LXQt.
-	services.xserver.desktopManager.lxqt.enable = true;
+		# Configure keymap in X11
+		layout = "us";
 
-	# Enable bspwm.
-	services.xserver.windowManager.bspwm.enable = true;
+		# Disable display managers, use startx.
+		displayManager.startx.enable = true;
 
-	# Configure keymap in X11
-	services.xserver.layout = "us";
+		# Enable LXQt.
+		desktopManager.lxqt.enable = true;
+
+		# Enable bspwm.
+		windowManager.bspwm.enable = true;
+
+	};
+
+	environment.lxqt.excludePackages = [
+
+		pkgs.openbox
+		pkgs.lxqt.lxqt-panel
+		pkgs.lxqt.obconf-qt
+		pkgs.xscreensaver
+
+	];
 
 }
