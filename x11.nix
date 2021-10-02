@@ -1,11 +1,12 @@
 { config, pkgs, ... }:
 
 {
-
 	services.xserver = {
-
 		# Enable the X11 windowing system.
 		enable = true;
+
+		# AMD Graphics
+		videoDrivers = [ "amdgpu" ];
 
 		# Configure keymap in X11
 		layout = "us";
@@ -18,16 +19,11 @@
 
 		# Enable bspwm.
 		windowManager.bspwm.enable = true;
-
 	};
-
 	environment.lxqt.excludePackages = [
-
 		pkgs.openbox
 		pkgs.lxqt.lxqt-panel
 		pkgs.lxqt.obconf-qt
 		pkgs.xscreensaver
-
 	];
-
 }

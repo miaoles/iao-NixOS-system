@@ -4,7 +4,6 @@
 
 	networking.hostName = "iao"; # Define your hostname.
 
-	#networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 	networking.wireless.iwd.enable = true;
 
 	services.connman.enable = true;

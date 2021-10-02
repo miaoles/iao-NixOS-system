@@ -1,19 +1,20 @@
-# iao nixos
-# main configuration
+# iao NixOS configuration
 
 { config, pkgs, ... }:
 
 {
 	imports = [
-
 		./hardware-configuration.nix
 		./boot.nix
 		./users.nix
 		./network.nix
 		./sound.nix
 		./x11.nix
-
+		./amd.nix
 	];
+
+	# Include man-pages.
+	manual.manpages.enable = true;
 
 	# Set your time zone.
 	time.timeZone = "America/New_York";
@@ -21,25 +22,20 @@
 	# Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
 	console = {
-
 		font = "Lat2-Terminus16";
 		keyMap = "us";
-
 	};
 
 	# Enable CUPS to print documents.
 	services.printing.enable = true;
 
+	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
-
 		sxhkd
 		roboto
 		roboto-mono
 		wget
 		featherpad
-		mpv
-		firefox-devedition-bin
-
 	];
 
 	# Before changing this value read the documentation for this option

@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
-
+	# These conflict with Pipewire.
 	# sound.enable = true;
 	# hardware.pulseaudio.enable = true;
-	security.rtkit.enable = true;
+
 	services.pipewire = {
 		enable = true;
 		alsa.enable = true;
@@ -18,4 +18,6 @@
 		#media-session.enable = true;
 	};
 
+	# Apparently needed by Pipewire?
+	security.rtkit.enable = true;
 }
