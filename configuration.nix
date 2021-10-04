@@ -8,6 +8,7 @@
 		./kernel.nix
 		./boot.nix
 		./users.nix
+		./security.nix
 		./network.nix
 		./sound.nix
 		./x11.nix

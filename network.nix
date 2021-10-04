@@ -19,7 +19,7 @@
 	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
 	# Enable the OpenSSH daemon.
-	# services.openssh.enable = true;
+	services.openssh.enable = true;
 
 	# Open ports in the firewall.
 	# networking.firewall.allowedTCPPorts = [ ... ];
@@ -29,11 +29,11 @@
 
 	# Some programs need SUID wrappers, can be configured further or are
 	# started in user sessions.
-	# programs.mtr.enable = true;
-	# programs.gnupg.agent = {
-	#	 enable = true;
-	#	 enableSSHSupport = true;
-	# };
+	programs.mtr.enable = true;
+	programs.gnupg.agent = {
+		enable = true;
+		enableSSHSupport = true;
+	};
 
 }
 

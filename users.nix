@@ -3,7 +3,12 @@
 {
 	users.users.miles = {
 		isNormalUser = true;
-		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+		extraGroups = [
+			"wheel"
+			"sudo"
+			"audio"
+			"video"
+		];
 		home = "/home/miles";
 	};
 }
