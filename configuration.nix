@@ -15,9 +15,6 @@
 		./amd.nix
 	];
 
-	# Include man-pages.
-	manual.manpages.enable = true;
-
 	# Set your time zone.
 	time.timeZone = "America/New_York";
 
