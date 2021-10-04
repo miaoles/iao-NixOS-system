@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	boot.kernelPackages = with pkgs; unstable.linuxPackages_xanmod;
+	boot.kernelPackages = linuxPackages_xanmod;
 }
