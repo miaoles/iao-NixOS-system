@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 
 {
-	boot.loader = {
-		efi = { canTouchEfiVariables = true; };
+	boot = {
+		loader.efi = { canTouchEfiVariables = true; };
 
-		initrd.kernelModules = [ "amdgpu" ];
-
-		grub = {
+		loader.grub = {
 			enable = true;
 			efiSupport = true;
 			device = "nodev";
 		};
+
+		initrd.kernelModules = [ "amdgpu" ];
 	};
 }
