@@ -13,6 +13,7 @@
 		./sound.nix
 		./x11.nix
 		./amd.nix
+		./fonts.nix
 	];
 
 	# Set your time zone.
@@ -30,9 +31,7 @@
 
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
-		sxhkd
-		roboto
-		roboto-mono
+		git
 		wget
 		featherpad
 	];

@@ -26,4 +26,8 @@
 		pkgs.lxqt.obconf-qt
 		pkgs.xscreensaver
 	];
+	environment.systemPackages = with pkgs; [
+		sxhkd
+		tint2
+	];
 }
