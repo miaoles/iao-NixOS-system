@@ -4,16 +4,16 @@
 
 {
 	imports = [
-		./hardware-configuration.nix
-		./kernel.nix
-		./boot.nix
-		./users.nix
-		./security.nix
-		./network.nix
-		./sound.nix
-		./x11.nix
-		./amd.nix
-		./fonts.nix
+		./modules/hardware-configuration.nix
+		./modules/kernel.nix
+		./modules/boot.nix
+		./modules/users.nix
+		./modules/security.nix
+		./modules/network.nix
+		./modules/sound.nix
+		./modules/x11.nix
+		./modules/amd.nix
+		./modules/fonts.nix
 	];
 
 	# Set your time zone.
@@ -31,6 +31,7 @@
 
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
+		fzf
 		git
 		wget
 		featherpad
@@ -38,7 +39,7 @@
 
 	# Before changing this value read the documentation for this option
 	# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-	system.stateVersion = "21.05"; # Did you read the comment?
+	system.stateVersion = "21.11"; # Did you read the comment?
 
 }
 
