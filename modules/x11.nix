@@ -11,14 +11,18 @@
 		# Configure keymap in X11
 		layout = "us";
 
-		# Disable display managers, use startx.
+		# Disable display managers, use startx in tty.
 		displayManager.startx.enable = true;
 
 		# Enable LXQt.
 		desktopManager.lxqt.enable = true;
 
 		# Enable bspwm.
-		windowManager.bspwm.enable = true;
+		windowManager.bspwm = {
+			enable = true;
+			#configFile = "/home/miles/Configuration/bspwm/bspwmrc";
+			#sxhkd.configFile = "/home/miles/Configuration/sxhkd/sxhkdrc";
+		};
 	};
 	environment.lxqt.excludePackages = [
 		pkgs.openbox
