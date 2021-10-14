@@ -10,6 +10,14 @@ in
 
 		# Configure keymap in X11
 		layout = "us";
+		
+		# Set DPI (Standard: 96)
+		dpi = 96;
+		
+		# Configure Input
+		libinput = {
+			
+		};
 
 		# Disable display managers, use startx in tty.
 		displayManager.startx.enable = true;
@@ -38,6 +46,7 @@ in
 	];
 
 	environment.systemPackages = with pkgs; [
+		libinput
 		sxhkd
 		tint2
 		xtitle
