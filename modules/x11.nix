@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+	unstable = import <nixos-unstable> {};
+in
 {
 	services.xserver = {
 		# Enable the X11 windowing system.
@@ -17,11 +20,11 @@
 		# Enable bspwm & sxhkd.
 		windowManager.bspwm = {
 			enable = true;
-			package = pkgs.bspwm-unstable;
+			package = unstable.bspwm;
 			#configFile = "/home/miles/Configuration/bspwm/bspwmrc";
 
 			sxhkd = {
-				package = pkgs.sxhkd-unstable;
+				package = unstable.sxhkd;
 				#configFile = "/home/miles/Configuration/sxhkd/sxhkdrc";
 			};
 		};
