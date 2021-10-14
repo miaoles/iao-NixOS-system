@@ -20,11 +20,11 @@ in
 		# Enable bspwm & sxhkd.
 		windowManager.bspwm = {
 			enable = true;
-			package = unstable.bspwm;
+			#package = unstable.bspwm;
 			#configFile = "/home/miles/Configuration/bspwm/bspwmrc";
 
 			sxhkd = {
-				package = unstable.sxhkd;
+				#package = unstable.sxhkd;
 				#configFile = "/home/miles/Configuration/sxhkd/sxhkdrc";
 			};
 		};
