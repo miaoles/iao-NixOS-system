@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+	nix.trustedUsers = [
+		"root"
+		"@wheel"
+	];
 	users.users.miles = {
 		isNormalUser = true;
 		extraGroups = [
