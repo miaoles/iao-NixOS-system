@@ -6,8 +6,10 @@
 
 	networking.wireless.iwd.enable = true;
 
-	services.connman.enable = true;
-	services.connman.wifi.backend = "iwd";
+	services.connman = {
+		enable = true;
+		wifi.backend = "iwd";
+	};
 
 	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
 	# Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -33,6 +35,12 @@
 	programs.gnupg.agent = {
 		enable = true;
 		enableSSHSupport = true;
+	};
+	
+	services.i2pd = {
+		#enable = true;
+		#enableIPv4 = true;
+		#enableIPv6 = true;
 	};
 }
 

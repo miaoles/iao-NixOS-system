@@ -16,7 +16,10 @@ in
 		
 		# Configure Input
 		libinput = {
-			
+			mouse = {
+				scrollMethod = "button";
+				scrollButton = 9;
+			};
 		};
 
 		# Disable display managers, use startx in tty.
@@ -29,24 +32,20 @@ in
 		windowManager.bspwm = {
 			enable = true;
 			#package = unstable.bspwm;
-			#configFile = "/home/miles/Configuration/bspwm/bspwmrc";
 
 			sxhkd = {
 				#package = unstable.sxhkd;
-				#configFile = "/home/miles/Configuration/sxhkd/sxhkdrc";
 			};
 		};
 	};
 
 	environment.lxqt.excludePackages = [
 		pkgs.openbox
-		pkgs.lxqt.lxqt-panel
 		pkgs.lxqt.obconf-qt
-		pkgs.xscreensaver
+		pkgs.lxqt.lxqt-panel
 	];
 
 	environment.systemPackages = with pkgs; [
-		libinput
 		sxhkd
 		tint2
 		xtitle

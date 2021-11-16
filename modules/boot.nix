@@ -12,6 +12,11 @@
 		};
 
 		initrd.kernelModules = [ "amdgpu" ];
+		
+		# Keychron Function Keys
+		extraModprobeConfig = ''
+			options hid_apple fnmode=2
+		'';
 
 		tmpOnTmpfs = true;
 	};

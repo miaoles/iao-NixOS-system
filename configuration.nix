@@ -14,8 +14,24 @@
 		./modules/x11.nix
 		./modules/amd.nix
 		./modules/fonts.nix
+		./modules/gaming.nix
 	];
-
+	
+	nix = {
+		package = pkgs.nixFlakes;
+		extraOptions = ''experimental-features = nix-command flakes'';
+	};
+	
+	environment.systemPackages = with pkgs; [
+		killall
+		git
+		unzip
+		fzf
+		wget
+		appimage-run
+		featherpad
+	];
+	
 	# Set your time zone.
 	time.timeZone = "America/New_York";
 
@@ -25,21 +41,17 @@
 		font = "Lat2-Terminus16";
 		keyMap = "us";
 	};
-
-	# Enable CUPS to print documents.
-	services.printing.enable = true;
-
-	nixpkgs.config.allowUnfree = true;
-	environment.systemPackages = with pkgs; [
-		fzf
-		git
-		wget
-		featherpad
-	];
+	
+	programs.steam.enable = true;
 
 	# Before changing this value read the documentation for this option
 	# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 	system.stateVersion = "21.11"; # Did you read the comment?
 
+	nixpkgs = {
+		config = {
+			allowUnfree = true;
+		};
+	};
 }
 
