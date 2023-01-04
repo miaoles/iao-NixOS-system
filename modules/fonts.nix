@@ -12,11 +12,20 @@
 		];
 		
 		fontconfig = {
+			#penultimate.enable = true;
 			defaultFonts = {
 				sansSerif = [ "Roboto" ];
 				serif = [ "Roboto Slab" ];
 				monospace = [ "Roboto Mono" ];
 			};
+			subpixel = {
+				#rbga = rgb;
+				#lcdfilter = light;
+			};
+			hinting = {
+				enable = true;
+			};
+			antialias = true;
 		};
 	};
 }
