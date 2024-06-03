@@ -1,8 +1,12 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 	fonts = {
-		fonts = with pkgs; [
+		enableDefaultPackages = true;
+		#enableDefaultFonts = true;
+
+		#fonts = with pkgs; [
+		packages = with pkgs; [
 			roboto
 			roboto-mono
 			roboto-slab
@@ -10,22 +14,24 @@
 			noto-fonts-cjk
 			noto-fonts-emoji
 		];
-		
+
 		fontconfig = {
-			#penultimate.enable = true;
 			defaultFonts = {
 				sansSerif = [ "Roboto" ];
 				serif = [ "Roboto Slab" ];
 				monospace = [ "Roboto Mono" ];
 			};
 			subpixel = {
-				#rbga = rgb;
-				#lcdfilter = light;
+				#rbga = "none";
+				lcdfilter = "light";
 			};
 			hinting = {
 				enable = true;
+				style = "none";
+				#style = "hintnone";
 			};
 			antialias = true;
+			cache32Bit = true;
 		};
 	};
 }

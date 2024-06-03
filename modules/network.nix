@@ -1,46 +1,57 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
+      networking.hostName = "iao"; # Define your hostname.
 
-	networking.hostName = "iao"; # Define your hostname.
+      #networking.wireless.enable = true;
+      #networking.wireless.userControlled.enable = true;
 
-	networking.wireless.iwd.enable = true;
+      networking.networkmanager.enable = true;
 
-	services.connman = {
-		enable = true;
-		wifi.backend = "iwd";
-	};
+      #networking.wireless.iwd = {
+      #	enable = true;
+      #	settings = {
+      #		General = {
+      #			EnableNetworkConfiguration = true;
+      #		};
+      #	};
+      #};
 
-	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
-	# Per-interface useDHCP will be mandatory in the future, so this generated config
-	# replicates the default behaviour.
-	networking.useDHCP = false;
+      #services.connman = {
+      #	enable = true;
+      #	wifi.backend = "iwd";
+      #};
 
-	# Configure network proxy if necessary
-	# networking.proxy.default = "http://user:password@proxy:port/";
-	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+      # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+      # Per-interface useDHCP will be mandatory in the future, so this generated config
+      # replicates the default behaviour.
+      networking.useDHCP = false;
 
-	# Enable the OpenSSH daemon.
-	services.openssh.enable = true;
+      # Configure network proxy if necessary
+      # networking.proxy.default = "http://user:password@proxy:port/";
+      # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-	# Open ports in the firewall.
-	# networking.firewall.allowedTCPPorts = [ ... ];
-	# networking.firewall.allowedUDPPorts = [ ... ];
-	# Or disable the firewall altogether.
-	# networking.firewall.enable = false;
+      # Enable the OpenSSH daemon.
+      services.openssh.enable = true;
 
-	# Some programs need SUID wrappers, can be configured further or are
-	# started in user sessions.
-	programs.mtr.enable = true;
-	programs.gnupg.agent = {
-		enable = true;
-		enableSSHSupport = true;
-	};
-	
-	services.i2pd = {
-		#enable = true;
-		#enableIPv4 = true;
-		#enableIPv6 = true;
-	};
+      # Open ports in the firewall.
+      # networking.firewall.allowedTCPPorts = [ ... ];
+      # networking.firewall.allowedUDPPorts = [ ... ];
+      # Or disable the firewall altogether.
+      # networking.firewall.enable = false;
+
+      # Some programs need SUID wrappers, can be configured further or are
+      # started in user sessions.
+      programs.mtr.enable = true;
+      programs.gnupg.agent = {
+            enable = true;
+            enableSSHSupport = true;
+      };
+
+      services.i2pd = {
+            #enable = true;
+            #enableIPv4 = true;
+            #enableIPv6 = true;
+      };
 }
 
