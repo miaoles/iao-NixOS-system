@@ -6,7 +6,7 @@
 {
       imports = [
             #<home-manager/nixos>
-            ./hardware-configuration.nix
+/*             ./hardware-configuration.nix
             ./modules/users.nix
             ./modules/kernel.nix
             ./modules/boot.nix
@@ -20,7 +20,7 @@
             ./modules/fonts.nix
             ./modules/gaming.nix
             ./modules/io.nix
-            ./modules/virtualisation.nix
+            ./modules/virtualisation.nix */
       ];
 
       # Before changing this value read the documentation for this option
