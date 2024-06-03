@@ -9,11 +9,11 @@
             loader.grub = {
                   enable = true;
                   efiSupport = true;
-                  #device = "nodev";
+                  device = "nodev";
                   useOSProber = true;
                   configurationLimit = 12;
                   extraConfig = "GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash acpi_osi=Linux\"";
-                  devices = [ "/dev/disk/by-uuid/E7F3-44AD" ];
+                  #devices = [ "/dev/disk/by-uuid/E7F3-44AD" ];
             };
 
             initrd.kernelModules = [
