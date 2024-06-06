@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-      programs.dconf.enable = true;
-
       environment.systemPackages = with pkgs; [
             #virt-manager-qt
             virt-manager
@@ -14,7 +12,7 @@
             win-spice
       ];
 
-      users.users.miles.extraGroups = [ "libvirtd" ];
+      programs.dconf.enable = true;
 
       virtualisation = {
             libvirtd = {
@@ -28,6 +26,8 @@
             };
 
             spiceUSBRedirection.enable = true;
+
+            docker.enable = true;
       };
 
       services.spice-vdagentd.enable = true;

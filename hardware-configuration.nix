@@ -19,19 +19,9 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E7F3-44AD";
+    { device = "/dev/disk/by-uuid/D037-40B9";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
-    };
-
-  fileSystems."/root/.cache/doc" =
-    { device = "portal";
-      fsType = "fuse.portal";
-    };
-
-  fileSystems."/root/.gvfs" =
-    { device = "gvfsd-fuse";
-      fsType = "fuse.gvfsd-fuse";
     };
 
   swapDevices =

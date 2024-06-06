@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-      imports = [
-            #./miles/home.nix
-      ];
-
       nix.settings.trusted-users = [
             "root"
             "@wheel"
@@ -22,6 +18,7 @@
                   "video"
                   "networkmanager"
                   "netdev"
+                  "libvirtd"
                   "docker"
             ];
             home = "/home/miles";

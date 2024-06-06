@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
       networking.hostName = "iao"; # Define your hostname.
@@ -53,5 +53,10 @@
             #enableIPv4 = true;
             #enableIPv6 = true;
       };
+
+      environment.systemPackages = with pkgs; [
+            #iwgtk # gtk iwd (wireless daemon) gui
+            networkmanagerapplet # networkmanager systay
+      ];
 }
 
